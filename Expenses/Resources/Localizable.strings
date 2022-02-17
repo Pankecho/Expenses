@@ -9,3 +9,10 @@
 "landing.title" = "Keep track of your expenses on credit cards";
 "landing.button.login" = "Login";
 "landing.button.signup" = "Signup";
+"auth.email" = "Email";
+"auth.emailPlaceholder" = "mail@example.com";
+"auth.password" = "Password";
+"auth.button.forgotPassword" = "Forgot Password?";
+"auth.button.login" = "Login";
+"auth.button.signup" = "Signup";
+"auth.button.social" = "Login with: ";
