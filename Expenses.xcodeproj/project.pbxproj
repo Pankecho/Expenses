@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB48A84827BEEE78005D2385 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB48A84627BEEE78005D2385 /* XCAssets+Generated.swift */; };
+		CB48A84927BEEE78005D2385 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB48A84727BEEE78005D2385 /* Strings+Generated.swift */; };
 		CBB9E04627BE300E00136C7C /* ExpensesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9E04527BE300E00136C7C /* ExpensesApp.swift */; };
 		CBB9E04A27BE300F00136C7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB9E04927BE300F00136C7C /* Assets.xcassets */; };
 		CBB9E04D27BE300F00136C7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB9E04C27BE300F00136C7C /* Preview Assets.xcassets */; };
@@ -15,6 +17,7 @@
 		CBB9E06327BE300F00136C7C /* ExpensesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9E06227BE300F00136C7C /* ExpensesUITestsLaunchTests.swift */; };
 		CBB9E07127BE31CF00136C7C /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9E07027BE31CF00136C7C /* LandingView.swift */; };
 		CBB9E07427BE33E900136C7C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9E07327BE33E900136C7C /* Color.swift */; };
+		CBB9E07A27BEEA9E00136C7C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBB9E07927BEEA9E00136C7C /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB48A84627BEEE78005D2385 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		CB48A84727BEEE78005D2385 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		CBB9E04227BE300E00136C7C /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB9E04527BE300E00136C7C /* ExpensesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesApp.swift; sourceTree = "<group>"; };
 		CBB9E04927BE300F00136C7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +51,7 @@
 		CBB9E06227BE300F00136C7C /* ExpensesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CBB9E07027BE31CF00136C7C /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		CBB9E07327BE33E900136C7C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CBB9E07927BEEA9E00136C7C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +105,8 @@
 				CBB9E07227BE33D900136C7C /* Extensions */,
 				CBB9E06F27BE302D00136C7C /* Landing */,
 				CBB9E04527BE300E00136C7C /* ExpensesApp.swift */,
-				CBB9E04927BE300F00136C7C /* Assets.xcassets */,
+				CBB9E07727BEE64400136C7C /* Resources */,
+				CBB9E07B27BEEC3800136C7C /* Generated */,
 				CBB9E04B27BE300F00136C7C /* Preview Content */,
 			);
 			path = Expenses;
@@ -146,6 +153,24 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CBB9E07727BEE64400136C7C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CBB9E04927BE300F00136C7C /* Assets.xcassets */,
+				CBB9E07927BEEA9E00136C7C /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CBB9E07B27BEEC3800136C7C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				CB48A84727BEEE78005D2385 /* Strings+Generated.swift */,
+				CB48A84627BEEE78005D2385 /* XCAssets+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,6 +181,8 @@
 				CBB9E03E27BE300E00136C7C /* Sources */,
 				CBB9E03F27BE300E00136C7C /* Frameworks */,
 				CBB9E04027BE300E00136C7C /* Resources */,
+				CBB9E07827BEE85B00136C7C /* Swiftgen */,
+				CB48A84A27BEF12D005D2385 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -251,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBB9E04D27BE300F00136C7C /* Preview Assets.xcassets in Resources */,
+				CBB9E07A27BEEA9E00136C7C /* Localizable.strings in Resources */,
 				CBB9E04A27BE300F00136C7C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,14 +299,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CB48A84A27BEF12D005D2385 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ -f \"${PROJECT_DIR}/scripts/swiftlint\" ]]; then\n  \"${PROJECT_DIR}/scripts/swiftlint\" --fix\nelse\n  echo \"warning: Swiftlint is not in the path. Make sure to copy the bin into the correct folder.\"\nfi \n";
+		};
+		CBB9E07827BEE85B00136C7C /* Swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ -f \"${PROJECT_DIR}/scripts/swiftgen\" ]]; then\n  \"${PROJECT_DIR}/scripts/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not in the path. Make sure to copy the bin into the correct folder.\"\nfi \n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CBB9E03E27BE300E00136C7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB48A84927BEEE78005D2385 /* Strings+Generated.swift in Sources */,
 				CBB9E07127BE31CF00136C7C /* LandingView.swift in Sources */,
 				CBB9E04627BE300E00136C7C /* ExpensesApp.swift in Sources */,
 				CBB9E07427BE33E900136C7C /* Color.swift in Sources */,
+				CB48A84827BEEE78005D2385 /* XCAssets+Generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

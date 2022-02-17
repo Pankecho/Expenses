@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Expenses
+
+  Created by Juan Pablo Martinez Ruiz on 17/02/22.
+  
+*/
+
+"landing.title" = "Keep track of your expenses on credit cards";
+"landing.button.login" = "Login";
+"landing.button.signup" = "Signup";
