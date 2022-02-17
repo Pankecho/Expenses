@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct ExpensesApp: App {
@@ -13,5 +14,9 @@ struct ExpensesApp: App {
         WindowGroup {
             LandingView()
         }
+    }
+
+    init() {
+        FirebaseApp.configure()
     }
 }
