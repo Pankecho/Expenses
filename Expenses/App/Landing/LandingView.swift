@@ -52,7 +52,7 @@ struct LandingView: View {
                                     .frame(minWidth: 0, maxWidth: .infinity)
                                     .padding()
                                     .foregroundColor(Color.white)
-                                    .background(Color.customOrange)
+                                    .background(Color(Colors.orange.name))
                             }
                             .frame(minWidth: 0, maxWidth: .infinity)
                         }
@@ -66,8 +66,8 @@ struct LandingView: View {
                                     .fontWeight(.semibold)
                                     .frame(minWidth: 0, maxWidth: .infinity)
                                     .padding()
-                                    .foregroundColor(Color.white)
-                                    .background(Color.customYellow)
+                                    .foregroundColor(.white)
+                                    .background(Color(Colors.orange.name))
                             }
                         }
                     }

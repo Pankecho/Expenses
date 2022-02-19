@@ -77,7 +77,7 @@ struct AuthView: View {
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .padding()
                             .foregroundColor(Color.white)
-                            .background(Color.customOrange)
+                            .background(Color(Colors.orange.name))
                     }
                 }
                 .padding()
