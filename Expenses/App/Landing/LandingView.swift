@@ -53,6 +53,7 @@ struct LandingView: View {
                                     .padding()
                                     .foregroundColor(Color.white)
                                     .background(Color(Colors.orange.name))
+                                    .cornerRadius(8)
                             }
                             .frame(minWidth: 0, maxWidth: .infinity)
                         }
@@ -67,13 +68,15 @@ struct LandingView: View {
                                     .frame(minWidth: 0, maxWidth: .infinity)
                                     .padding()
                                     .foregroundColor(.white)
-                                    .background(Color(Colors.orange.name))
+                                    .background(Color(Colors.yellow.name))
+                                    .cornerRadius(8)
                             }
                         }
                     }
                 }
                 .padding(20)
-            }.navigationBarHidden(true)
+            }
+            .navigationBarHidden(true)
         }
     }
 

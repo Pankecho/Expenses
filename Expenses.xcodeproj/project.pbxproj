@@ -17,6 +17,7 @@
 		CB7293AD27BF0E0D00C0F592 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7293AC27BF0E0D00C0F592 /* Bank.swift */; };
 		CB7293B127BF0F2000C0F592 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7293B027BF0F2000C0F592 /* Expense.swift */; };
 		CB7293B327BF0FF200C0F592 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7293B227BF0FF200C0F592 /* Card.swift */; };
+		CBA2787527D6C18600998FE0 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2787427D6C18600998FE0 /* Client.swift */; };
 		CBB9E04627BE300E00136C7C /* ExpensesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9E04527BE300E00136C7C /* ExpensesApp.swift */; };
 		CBB9E04A27BE300F00136C7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB9E04927BE300F00136C7C /* Assets.xcassets */; };
 		CBB9E04D27BE300F00136C7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB9E04C27BE300F00136C7C /* Preview Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		CBB9E06327BE300F00136C7C /* ExpensesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9E06227BE300F00136C7C /* ExpensesUITestsLaunchTests.swift */; };
 		CBB9E07127BE31CF00136C7C /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9E07027BE31CF00136C7C /* LandingView.swift */; };
 		CBB9E07A27BEEA9E00136C7C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBB9E07927BEEA9E00136C7C /* Localizable.strings */; };
+		CBF5E62127C46B6D0089880E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5E62027C46B6D0089880E /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 		CB7293AC27BF0E0D00C0F592 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		CB7293B027BF0F2000C0F592 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		CB7293B227BF0FF200C0F592 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		CBA2787427D6C18600998FE0 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		CBB9E04227BE300E00136C7C /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB9E04527BE300E00136C7C /* ExpensesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesApp.swift; sourceTree = "<group>"; };
 		CBB9E04927BE300F00136C7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		CBB9E06227BE300F00136C7C /* ExpensesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CBB9E07027BE31CF00136C7C /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		CBB9E07927BEEA9E00136C7C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		CBF5E62027C46B6D0089880E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				CB72939927BEF83300C0F592 /* AuthView.swift */,
+				CBF5E62027C46B6D0089880E /* AuthViewModel.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -120,6 +125,14 @@
 				CB7293B027BF0F2000C0F592 /* Expense.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		CBA2787327D6C17200998FE0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CBA2787427D6C18600998FE0 /* Client.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		CBB9E03927BE300E00136C7C = {
@@ -146,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				CB72939727BEF80100C0F592 /* App */,
+				CBA2787327D6C17200998FE0 /* Service */,
 				CBB9E07227BE33D900136C7C /* Extensions */,
 				CBB9E07727BEE64400136C7C /* Resources */,
 				CBB9E07B27BEEC3800136C7C /* Generated */,
@@ -402,6 +416,8 @@
 				CB7293AD27BF0E0D00C0F592 /* Bank.swift in Sources */,
 				CBB9E04627BE300E00136C7C /* ExpensesApp.swift in Sources */,
 				CB48A84827BEEE78005D2385 /* XCAssets+Generated.swift in Sources */,
+				CBA2787527D6C18600998FE0 /* Client.swift in Sources */,
+				CBF5E62127C46B6D0089880E /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
