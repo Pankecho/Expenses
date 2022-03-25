@@ -18,7 +18,19 @@ public enum L10n {
     public static let emailPlaceholder = L10n.tr("Localizable", "auth.emailPlaceholder")
     /// Password
     public static let password = L10n.tr("Localizable", "auth.password")
+    public enum Alert {
+      /// Error
+      public static let title = L10n.tr("Localizable", "auth.alert.title")
+      public enum Button {
+        /// Accept
+        public static let ok = L10n.tr("Localizable", "auth.alert.button.ok")
+      }
+    }
     public enum Button {
+      /// Already have an account? Login
+      public static let alreadyHaveAccount = L10n.tr("Localizable", "auth.button.alreadyHaveAccount")
+      /// Don't have an account? Signup
+      public static let dontHaveAccount = L10n.tr("Localizable", "auth.button.dontHaveAccount")
       /// Forgot Password?
       public static let forgotPassword = L10n.tr("Localizable", "auth.button.forgotPassword")
       /// Login
@@ -34,10 +46,8 @@ public enum L10n {
     /// Keep track of your expenses on credit cards
     public static let title = L10n.tr("Localizable", "landing.title")
     public enum Button {
-      /// Login
-      public static let login = L10n.tr("Localizable", "landing.button.login")
-      /// Signup
-      public static let signup = L10n.tr("Localizable", "landing.button.signup")
+      /// Next
+      public static let next = L10n.tr("Localizable", "landing.button.next")
     }
   }
 }

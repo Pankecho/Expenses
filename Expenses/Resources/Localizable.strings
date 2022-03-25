@@ -7,8 +7,7 @@
 */
 
 "landing.title" = "Keep track of your expenses on credit cards";
-"landing.button.login" = "Login";
-"landing.button.signup" = "Signup";
+"landing.button.next" = "Next";
 "auth.email" = "Email";
 "auth.emailPlaceholder" = "mail@example.com";
 "auth.password" = "Password";
@@ -16,3 +15,7 @@
 "auth.button.login" = "Login";
 "auth.button.signup" = "Signup";
 "auth.button.social" = "Login with: ";
+"auth.button.dontHaveAccount" = "Don't have an account? Signup";
+"auth.button.alreadyHaveAccount" = "Already have an account? Login";
+"auth.alert.title" = "Error";
+"auth.alert.button.ok" = "Accept";

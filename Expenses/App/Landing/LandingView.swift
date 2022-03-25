@@ -7,17 +7,14 @@
 
 import SwiftUI
 
-enum AuthType {
-    case login
-    case signup
-}
-
 struct LandingView: View {
     typealias Strings = L10n.Landing
     typealias Images = Asset.Assets.Image
     typealias Colors = Asset.Assets.Color
 
     @State var goToAuth: Bool = false
+
+    @State private var viewModel: LandingViewModel
 
     var body: some View {
         NavigationView {
@@ -42,36 +39,19 @@ struct LandingView: View {
                     Spacer()
 
                     VStack(spacing: 20) {
-                        NavigationLink(destination: AuthView(authType: .login),
-                                       isActive: $goToAuth) {
-                            Button {
-                                goToAuth = true
-                            } label: {
-                                Text(Strings.Button.login)
-                                    .fontWeight(.semibold)
-                                    .frame(minWidth: 0, maxWidth: .infinity)
-                                    .padding()
-                                    .foregroundColor(Color.white)
-                                    .background(Color(Colors.orange.name))
-                                    .cornerRadius(8)
-                            }
-                            .frame(minWidth: 0, maxWidth: .infinity)
+                        Button {
+                            goToAuth = true
+                            viewModel.saveFirstTimeKey(with: true)
+                        } label: {
+                            Text(Strings.Button.next)
+                                .fontWeight(.semibold)
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .padding()
+                                .foregroundColor(Color.white)
+                                .background(Color(Colors.orange.name))
+                                .cornerRadius(8)
                         }
-
-                        NavigationLink(destination: AuthView(authType: .signup),
-                                       isActive: $goToAuth) {
-                            Button {
-                                goToAuth = true
-                            } label: {
-                                Text(Strings.Button.signup)
-                                    .fontWeight(.semibold)
-                                    .frame(minWidth: 0, maxWidth: .infinity)
-                                    .padding()
-                                    .foregroundColor(.white)
-                                    .background(Color(Colors.yellow.name))
-                                    .cornerRadius(8)
-                            }
-                        }
+                        .frame(minWidth: 0, maxWidth: .infinity)
                     }
                 }
                 .padding(20)
@@ -80,7 +60,9 @@ struct LandingView: View {
         }
     }
 
-    init() {
+    init(vm: LandingViewModel) {
+        self.viewModel = vm
+
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.largeTitleTextAttributes = [
             .foregroundColor: UIColor.white
@@ -100,6 +82,6 @@ struct LandingView: View {
 
 struct LandingView_Previews: PreviewProvider {
     static var previews: some View {
-        LandingView()
+        LandingView(vm: LandingViewModel())
     }
 }
