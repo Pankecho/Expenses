@@ -10,9 +10,27 @@ import Firebase
 
 @main
 struct ExpensesApp: App {
+    @StateObject var authenticationViewModel = AuthViewModel.shared
+    @StateObject var landingViewModel = LandingViewModel()
+
     var body: some Scene {
         WindowGroup {
-            LandingView()
+            if let user = authenticationViewModel.user {
+                VStack {
+                    Text("User: \(user.email) - \(user.id)")
+                    Button {
+                        authenticationViewModel.signOut()
+                    } label: {
+                        Text("Sign out")
+                    }
+                }
+            } else {
+                if landingViewModel.hasLandingLoaded {
+                    AuthView()
+                } else {
+                    LandingView(vm: landingViewModel)
+                }
+            }
         }
     }
 

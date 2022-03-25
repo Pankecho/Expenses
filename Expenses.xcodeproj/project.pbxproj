@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB17D45E27EE5BE60093E29A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB17D45D27EE5BE60093E29A /* User.swift */; };
+		CB26683727EE6D8100A1DB46 /* CommonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB26683627EE6D8100A1DB46 /* CommonTextField.swift */; };
+		CB26683927EE6DB800A1DB46 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB26683827EE6DB800A1DB46 /* PasswordTextField.swift */; };
+		CB3E7C3127EE6931006E7EF4 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3E7C3027EE6931006E7EF4 /* LandingViewModel.swift */; };
 		CB48A84827BEEE78005D2385 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB48A84627BEEE78005D2385 /* XCAssets+Generated.swift */; };
 		CB48A84927BEEE78005D2385 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB48A84727BEEE78005D2385 /* Strings+Generated.swift */; };
 		CB72939A27BEF83300C0F592 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB72939927BEF83300C0F592 /* AuthView.swift */; };
@@ -17,7 +21,8 @@
 		CB7293AD27BF0E0D00C0F592 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7293AC27BF0E0D00C0F592 /* Bank.swift */; };
 		CB7293B127BF0F2000C0F592 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7293B027BF0F2000C0F592 /* Expense.swift */; };
 		CB7293B327BF0FF200C0F592 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7293B227BF0FF200C0F592 /* Card.swift */; };
-		CBA2787527D6C18600998FE0 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2787427D6C18600998FE0 /* Client.swift */; };
+		CBA2787527D6C18600998FE0 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2787427D6C18600998FE0 /* AuthClient.swift */; };
+		CBA2787A27D6C3D600998FE0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2787927D6C3D600998FE0 /* HomeView.swift */; };
 		CBB9E04627BE300E00136C7C /* ExpensesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9E04527BE300E00136C7C /* ExpensesApp.swift */; };
 		CBB9E04A27BE300F00136C7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB9E04927BE300F00136C7C /* Assets.xcassets */; };
 		CBB9E04D27BE300F00136C7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB9E04C27BE300F00136C7C /* Preview Assets.xcassets */; };
@@ -47,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB17D45D27EE5BE60093E29A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CB26683627EE6D8100A1DB46 /* CommonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextField.swift; sourceTree = "<group>"; };
+		CB26683827EE6DB800A1DB46 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		CB3E7C3027EE6931006E7EF4 /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 		CB48A84627BEEE78005D2385 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		CB48A84727BEEE78005D2385 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		CB72939927BEF83300C0F592 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -54,7 +63,8 @@
 		CB7293AC27BF0E0D00C0F592 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		CB7293B027BF0F2000C0F592 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		CB7293B227BF0FF200C0F592 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		CBA2787427D6C18600998FE0 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		CBA2787427D6C18600998FE0 /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
+		CBA2787927D6C3D600998FE0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CBB9E04227BE300E00136C7C /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB9E04527BE300E00136C7C /* ExpensesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesApp.swift; sourceTree = "<group>"; };
 		CBB9E04927BE300F00136C7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,11 +107,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB26683427EE6D6500A1DB46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB7293AC27BF0E0D00C0F592 /* Bank.swift */,
+				CB7293B227BF0FF200C0F592 /* Card.swift */,
+				CB7293B027BF0F2000C0F592 /* Expense.swift */,
+				CB17D45D27EE5BE60093E29A /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB26683527EE6D6A00A1DB46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB26683627EE6D8100A1DB46 /* CommonTextField.swift */,
+				CB26683827EE6DB800A1DB46 /* PasswordTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CB72939727BEF80100C0F592 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CBA2787627D6C3C200998FE0 /* Home */,
 				CB72939827BEF81D00C0F592 /* Auth */,
 				CBB9E06F27BE302D00136C7C /* Landing */,
+				CBA2787327D6C17200998FE0 /* Service */,
 				CB7293AB27BF0DFB00C0F592 /* Shared */,
 				CBB9E04527BE300E00136C7C /* ExpensesApp.swift */,
 			);
@@ -120,9 +152,8 @@
 		CB7293AB27BF0DFB00C0F592 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				CB7293AC27BF0E0D00C0F592 /* Bank.swift */,
-				CB7293B227BF0FF200C0F592 /* Card.swift */,
-				CB7293B027BF0F2000C0F592 /* Expense.swift */,
+				CB26683527EE6D6A00A1DB46 /* View */,
+				CB26683427EE6D6500A1DB46 /* Model */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -130,9 +161,17 @@
 		CBA2787327D6C17200998FE0 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				CBA2787427D6C18600998FE0 /* Client.swift */,
+				CBA2787427D6C18600998FE0 /* AuthClient.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		CBA2787627D6C3C200998FE0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CBA2787927D6C3D600998FE0 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		CBB9E03927BE300E00136C7C = {
@@ -159,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				CB72939727BEF80100C0F592 /* App */,
-				CBA2787327D6C17200998FE0 /* Service */,
 				CBB9E07227BE33D900136C7C /* Extensions */,
 				CBB9E07727BEE64400136C7C /* Resources */,
 				CBB9E07B27BEEC3800136C7C /* Generated */,
@@ -198,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				CBB9E07027BE31CF00136C7C /* LandingView.swift */,
+				CB3E7C3027EE6931006E7EF4 /* LandingViewModel.swift */,
 			);
 			path = Landing;
 			sourceTree = "<group>";
@@ -410,13 +449,18 @@
 			files = (
 				CB7293B127BF0F2000C0F592 /* Expense.swift in Sources */,
 				CB7293B327BF0FF200C0F592 /* Card.swift in Sources */,
+				CB26683727EE6D8100A1DB46 /* CommonTextField.swift in Sources */,
 				CB72939A27BEF83300C0F592 /* AuthView.swift in Sources */,
 				CB48A84927BEEE78005D2385 /* Strings+Generated.swift in Sources */,
+				CB26683927EE6DB800A1DB46 /* PasswordTextField.swift in Sources */,
 				CBB9E07127BE31CF00136C7C /* LandingView.swift in Sources */,
+				CBA2787A27D6C3D600998FE0 /* HomeView.swift in Sources */,
 				CB7293AD27BF0E0D00C0F592 /* Bank.swift in Sources */,
 				CBB9E04627BE300E00136C7C /* ExpensesApp.swift in Sources */,
+				CB17D45E27EE5BE60093E29A /* User.swift in Sources */,
 				CB48A84827BEEE78005D2385 /* XCAssets+Generated.swift in Sources */,
-				CBA2787527D6C18600998FE0 /* Client.swift in Sources */,
+				CB3E7C3127EE6931006E7EF4 /* LandingViewModel.swift in Sources */,
+				CBA2787527D6C18600998FE0 /* AuthClient.swift in Sources */,
 				CBF5E62127C46B6D0089880E /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

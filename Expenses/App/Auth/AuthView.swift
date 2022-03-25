@@ -7,8 +7,13 @@
 
 import SwiftUI
 
+enum AuthType {
+    case login
+    case signup
+}
+
 struct AuthView: View {
-    private let authType: AuthType
+    @State private var authType: AuthType = .login
 
     typealias Strings = L10n.Auth
     typealias Images = Asset.Assets.Image
@@ -24,7 +29,7 @@ struct AuthView: View {
             ScrollView {
                 VStack(spacing: 40) {
 
-                    Image(Images.budget.name)
+                    Image(authType == .login ? Images.budget.name : Images.savings.name)
                         .resizable()
                         .frame(width: 150, height: 150)
 
@@ -32,19 +37,26 @@ struct AuthView: View {
                                     text: $viewModel.email,
                                     placeholder: Strings.emailPlaceholder,
                                     textColor: .white,
-                                    borderColor: Color(Colors.green.name))
+                                    borderColor: Color(Colors.green.name),
+                                    icon: "envelope",
+                                    iconColor: Color(Colors.green.name))
 
                     PasswordTextField(title: Strings.password,
                                       text: $viewModel.password,
+                                      textColor: .white,
+                                      borderColor: Color(Colors.green.name),
+                                      icon: "lock",
+                                      iconColor: Color(Colors.green.name),
                                       forgotPasswordTitle: Strings.Button.forgotPassword,
-                                      showForgotPassword: authType == .login)
+                                      showForgotPassword: authType == .login,
+                                      forgotPasswordColor: Color(Colors.green.name))
 
                     Button {
                         switch authType {
                         case .login:
                             viewModel.login()
                         case .signup:
-                            viewModel.signup()
+                            viewModel.createUser()
                         }
                     } label: {
                         Text(authType == .login ? Strings.Button.login : Strings.Button.signup)
@@ -55,106 +67,38 @@ struct AuthView: View {
                             .background(Color(Colors.orange.name))
                             .cornerRadius(8)
                     }
+                    .disabled(viewModel.isValid)
+
+                    Button {
+                        switch authType {
+                        case .login:
+                            authType = .signup
+                        case .signup:
+                            authType = .login
+                        }
+                    } label: {
+                        Text(authType == .login ? Strings.Button.dontHaveAccount : Strings.Button.alreadyHaveAccount)
+                            .foregroundColor(Color(Colors.orange.name))
+                            .fontWeight(.semibold)
+                    }
                 }
                 .padding()
             }
-        }.navigationBarTitleDisplayMode(.inline)
+            .alert(isPresented: $viewModel.showError) {
+                Alert(title: Text(Strings.Alert.title),
+                      message: Text(viewModel.errorMessage),
+                      dismissButton: .default(Text(Strings.Alert.Button.ok)) { })
+            }
+        }
     }
 
-    init(authType: AuthType) {
-        self.authType = authType
-
-        viewModel = AuthViewModel(client: FirebaseAC())
+    init() {
+        self.viewModel = AuthViewModel.shared
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthView(authType: .login)
-    }
-}
-
-struct CommonTextField: View {
-    let title: String
-
-    @Binding var text: String
-
-    let placeholder: String
-
-    let textColor: Color
-
-    let borderColor: Color
-
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .foregroundColor(.white)
-
-            TextField(placeholder, text: $text)
-                .keyboardType(.emailAddress)
-                .textContentType(.emailAddress)
-                .foregroundColor(textColor)
-                .disableAutocorrection(true)
-                .autocapitalization(.none)
-
-            Divider()
-                .frame(height: 1)
-                .background(borderColor)
-        }
-    }
-}
-
-struct PasswordTextField: View {
-    typealias Colors = Asset.Assets.Color
-
-    let title: String
-
-    @State private var showPassword: Bool = false
-
-    @Binding var text: String
-
-    let forgotPasswordTitle: String
-    let showForgotPassword: Bool
-
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .foregroundColor(.white)
-
-            HStack {
-                if showPassword {
-                    TextField("", text: $text)
-                        .textContentType(.password)
-                        .foregroundColor(.white)
-                } else {
-                    SecureField("", text: $text)
-                        .textContentType(.password)
-                        .foregroundColor(.white)
-                }
-
-                Image(systemName: showPassword ? "eye.slash.fill" : "eye.fill")
-                    .foregroundColor(Color(Colors.green.name))
-                    .padding([.bottom, .trailing], 4)
-                    .onTapGesture {
-                        self.showPassword.toggle()
-                    }
-            }
-
-            Divider()
-                .frame(height: 1)
-                .background(Color(Colors.green.name))
-
-            if showForgotPassword {
-                VStack(alignment: .trailing) {
-                    Button {
-                        //
-                    } label: {
-                        Text(forgotPasswordTitle)
-                            .font(.footnote)
-                            .foregroundColor(Color(Colors.green.name))
-                    }
-                }
-            }
-        }
+        AuthView()
     }
 }
