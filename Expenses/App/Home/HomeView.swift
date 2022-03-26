@@ -14,17 +14,17 @@ struct HomeView: View {
 
     var body: some View {
         TabView(selection: $tagSelected) {
-            Text("Expenses")
+            CardView()
                 .tabItem {
-                    Image(systemName: "list.dash")
-                    Text("Expenses")
+                    Image(systemName: "creditcard")
+                    Text("Cards")
                 }
                 .tag(0)
 
             Text("Expenses")
                 .tabItem {
-                    Image(systemName: "plus.circle.fill")
-                    Text("Add")
+                    Image(systemName: "list.dash")
+                    Text("Expenses")
                 }
                 .tag(1)
 

@@ -25,7 +25,7 @@ struct CommonTextField: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(title)
-                .foregroundColor(.white)
+                .foregroundColor(textColor)
                 .fontWeight(.semibold)
 
             HStack {

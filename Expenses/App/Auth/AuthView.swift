@@ -67,7 +67,6 @@ struct AuthView: View {
                             .background(Color(Colors.orange.name))
                             .cornerRadius(8)
                     }
-                    .disabled(viewModel.isValid)
 
                     Button {
                         switch authType {

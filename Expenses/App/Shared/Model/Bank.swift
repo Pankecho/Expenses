@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum Bank: String, Codable {
+public enum Bank: String, Codable, CaseIterable {
     case bbva = "BBVA"
     case banorte = "Banorte"
     case banamex = "CitiBanamex"

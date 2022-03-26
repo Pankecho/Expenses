@@ -15,15 +15,8 @@ struct ExpensesApp: App {
 
     var body: some Scene {
         WindowGroup {
-            if let user = authenticationViewModel.user {
-                VStack {
-                    Text("User: \(user.email) - \(user.id)")
-                    Button {
-                        authenticationViewModel.signOut()
-                    } label: {
-                        Text("Sign out")
-                    }
-                }
+            if let _ = authenticationViewModel.user {
+                HomeView()
             } else {
                 if landingViewModel.hasLandingLoaded {
                     AuthView()
