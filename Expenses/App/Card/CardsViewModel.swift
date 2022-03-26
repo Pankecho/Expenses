@@ -59,10 +59,16 @@ struct CardViewModel: Hashable {
         return card.name
     }
 
+    var bank: String {
+        return card.bank.rawValue
+    }
+
+    var cardType: String {
+        return card.type.rawValue
+    }
+
     var creditLimit: String {
-        let formatter = NumberFormatter()
-        formatter.currencyCode = Locale.current.currencyCode ?? "USD"
-        return formatter.string(from: card.limit as NSNumber) ?? ""
+        return card.limit.formatAsCurrency()
     }
 
     init(c: Card) {

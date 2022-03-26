@@ -43,20 +43,3 @@ struct CardView_Previews: PreviewProvider {
         CardView()
     }
 }
-
-struct CardItemView: View {
-    private let viewModel: CardViewModel
-
-    var body: some View {
-        HStack {
-            Text(viewModel.name)
-                .fontWeight(.semibold)
-
-            Text(viewModel.creditLimit)
-        }
-    }
-
-    init(item: CardViewModel) {
-        viewModel = item
-    }
-}

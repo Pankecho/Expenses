@@ -22,7 +22,7 @@ struct AddCardView: View {
                 .ignoresSafeArea()
 
             VStack {
-                HStack() {
+                HStack {
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
@@ -95,9 +95,6 @@ struct AddCardView: View {
                             .padding()
                             .background(Color.white)
                             .cornerRadius(8)
-
-
-
 
                         PickerField(title: "Bank",
                                     textColor: .black,

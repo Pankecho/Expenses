@@ -26,6 +26,8 @@
 		CB732D4927EE9032001D5CD6 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = CB732D4827EE9032001D5CD6 /* FirebaseFirestoreSwift-Beta */; };
 		CB732D4B27EE9439001D5CD6 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB732D4A27EE9439001D5CD6 /* AddCardView.swift */; };
 		CB7EB1DB27EFAC9A007BC956 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7EB1DA27EFAC9A007BC956 /* AddCardViewModel.swift */; };
+		CB7EB1DD27EFB77B007BC956 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7EB1DC27EFB77B007BC956 /* Double.swift */; };
+		CB7EB1DF27EFB7E2007BC956 /* CardItemCardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7EB1DE27EFB7E1007BC956 /* CardItemCardItemView.swift */; };
 		CBA2787527D6C18600998FE0 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2787427D6C18600998FE0 /* AuthClient.swift */; };
 		CBA2787A27D6C3D600998FE0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2787927D6C3D600998FE0 /* HomeView.swift */; };
 		CBB9E04627BE300E00136C7C /* ExpensesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9E04527BE300E00136C7C /* ExpensesApp.swift */; };
@@ -73,6 +75,8 @@
 		CB7293B227BF0FF200C0F592 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CB732D4A27EE9439001D5CD6 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		CB7EB1DA27EFAC9A007BC956 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
+		CB7EB1DC27EFB77B007BC956 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		CB7EB1DE27EFB7E1007BC956 /* CardItemCardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItemCardItemView.swift; sourceTree = "<group>"; };
 		CBA2787427D6C18600998FE0 /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		CBA2787927D6C3D600998FE0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CBB9E04227BE300E00136C7C /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +148,7 @@
 				CB26683F27EE85B700A1DB46 /* CardView.swift */,
 				CB732D4A27EE9439001D5CD6 /* AddCardView.swift */,
 				CB7EB1DA27EFAC9A007BC956 /* AddCardViewModel.swift */,
+				CB7EB1DE27EFB7E1007BC956 /* CardItemCardItemView.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 		CBB9E07227BE33D900136C7C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CB7EB1DC27EFB77B007BC956 /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				CB26683727EE6D8100A1DB46 /* CommonTextField.swift in Sources */,
 				CB72939A27BEF83300C0F592 /* AuthView.swift in Sources */,
 				CB26683C27EE7DAC00A1DB46 /* CardsViewModel.swift in Sources */,
+				CB7EB1DF27EFB7E2007BC956 /* CardItemCardItemView.swift in Sources */,
 				CB48A84927BEEE78005D2385 /* Strings+Generated.swift in Sources */,
 				CB26683927EE6DB800A1DB46 /* PasswordTextField.swift in Sources */,
 				CBB9E07127BE31CF00136C7C /* LandingView.swift in Sources */,
@@ -483,6 +490,7 @@
 				CB26684027EE85B700A1DB46 /* CardView.swift in Sources */,
 				CB732D4B27EE9439001D5CD6 /* AddCardView.swift in Sources */,
 				CB7EB1DB27EFAC9A007BC956 /* AddCardViewModel.swift in Sources */,
+				CB7EB1DD27EFB77B007BC956 /* Double.swift in Sources */,
 				CBB9E04627BE300E00136C7C /* ExpensesApp.swift in Sources */,
 				CB17D45E27EE5BE60093E29A /* User.swift in Sources */,
 				CB48A84827BEEE78005D2385 /* XCAssets+Generated.swift in Sources */,
