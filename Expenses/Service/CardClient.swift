@@ -23,17 +23,15 @@ protocol CardServiceProtocol {
 
 final class FirebaseCardClient: CardServiceProtocol {
 
-    private let userID: String
+    private var userID: String {
+        return AuthViewModel.shared.user?.id ?? ""
+    }
 
     private let collectionName: String = "cards"
     private let db = Firestore.firestore()
 
     private var dbReference: CollectionReference {
         return db.collection(collectionName)
-    }
-
-    init(userId: String) {
-        userID = userId
     }
 
     func getCards(completion: @escaping ((Result<[Card], Error>) -> Void)) {

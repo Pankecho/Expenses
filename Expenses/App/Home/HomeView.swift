@@ -28,7 +28,7 @@ struct HomeView: View {
                 }
                 .tag(1)
 
-            Text("Settings")
+            SettingsView()
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")

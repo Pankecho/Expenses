@@ -19,10 +19,7 @@ final class CardsViewModel: ObservableObject {
     var errorMessage: String = ""
 
     init() {
-        guard let user = AuthViewModel.shared.user else {
-            fatalError("User is not logged in")
-        }
-        self.client = FirebaseCardClient(userId: user.id)
+        self.client = FirebaseCardClient()
     }
 
     init(client: CardServiceProtocol) {

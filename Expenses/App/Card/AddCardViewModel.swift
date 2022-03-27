@@ -10,7 +10,9 @@ import Foundation
 final class AddCardViewModel: ObservableObject {
     private let client: CardServiceProtocol
 
-    private let userID: String
+    private var userID: String {
+        return AuthViewModel.shared.user?.id ?? ""
+    }
 
     // Input
     @Published var name: String = ""
@@ -59,7 +61,6 @@ final class AddCardViewModel: ObservableObject {
         guard let user = AuthViewModel.shared.user else {
             fatalError("User is not logged in")
         }
-        self.client = FirebaseCardClient(userId: user.id)
-        self.userID = user.id
+        self.client = FirebaseCardClient()
     }
 }
