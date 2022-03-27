@@ -43,6 +43,25 @@ final class CardsViewModel: ObservableObject {
             }
         }
     }
+
+    func deleteCard(at index: Int) {
+        let item = cards[index]
+        client.removeCard(with: item.id) { result in
+            switch result {
+            case .success:
+                DispatchQueue.main.async {
+                    self.cards.remove(at: index)
+                    let cardsVM = self.cards.map({ CardViewModel(c: $0) })
+                    self.cardsVM = cardsVM
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.showError = true
+                    self.errorMessage = error.localizedDescription
+                }
+            }
+        }
+    }
 }
 
 struct CardViewModel: Hashable {

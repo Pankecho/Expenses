@@ -22,6 +22,10 @@ struct CardView: View {
                         ForEach(viewModel.cardsVM, id: \.self) { item in
                             CardItemView(item: item)
                         }
+                        .onDelete { index in
+                            guard let index = index.first else { return }
+                            viewModel.deleteCard(at: index)
+                        }
                     }
                 } else {
                     EmptyView(image: "emptyCards",
