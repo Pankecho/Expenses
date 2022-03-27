@@ -30,6 +30,7 @@
 		CB7EB1DF27EFB7E2007BC956 /* CardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7EB1DE27EFB7E1007BC956 /* CardItemView.swift */; };
 		CB7EB1E227EFC2B5007BC956 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7EB1E127EFC2B4007BC956 /* SettingsView.swift */; };
 		CB7EB1E427EFFC37007BC956 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7EB1E327EFFC37007BC956 /* EmptyView.swift */; };
+		CB7EB1E627F12912007BC956 /* PickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7EB1E527F12912007BC956 /* PickerField.swift */; };
 		CBA2787527D6C18600998FE0 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2787427D6C18600998FE0 /* AuthClient.swift */; };
 		CBA2787A27D6C3D600998FE0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2787927D6C3D600998FE0 /* HomeView.swift */; };
 		CBB9E04627BE300E00136C7C /* ExpensesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9E04527BE300E00136C7C /* ExpensesApp.swift */; };
@@ -81,6 +82,7 @@
 		CB7EB1DE27EFB7E1007BC956 /* CardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItemView.swift; sourceTree = "<group>"; };
 		CB7EB1E127EFC2B4007BC956 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CB7EB1E327EFFC37007BC956 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		CB7EB1E527F12912007BC956 /* PickerField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerField.swift; sourceTree = "<group>"; };
 		CBA2787427D6C18600998FE0 /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		CBA2787927D6C3D600998FE0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CBB9E04227BE300E00136C7C /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +144,7 @@
 				CB26683627EE6D8100A1DB46 /* CommonTextField.swift */,
 				CB26683827EE6DB800A1DB46 /* PasswordTextField.swift */,
 				CB7EB1E327EFFC37007BC956 /* EmptyView.swift */,
+				CB7EB1E527F12912007BC956 /* PickerField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				CB17D45E27EE5BE60093E29A /* User.swift in Sources */,
 				CB48A84827BEEE78005D2385 /* XCAssets+Generated.swift in Sources */,
 				CB26683E27EE7DBA00A1DB46 /* CardClient.swift in Sources */,
+				CB7EB1E627F12912007BC956 /* PickerField.swift in Sources */,
 				CB3E7C3127EE6931006E7EF4 /* LandingViewModel.swift in Sources */,
 				CBA2787527D6C18600998FE0 /* AuthClient.swift in Sources */,
 				CBF5E62127C46B6D0089880E /* AuthViewModel.swift in Sources */,

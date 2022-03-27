@@ -10,8 +10,7 @@ import SwiftUI
 struct AddCardView: View {
     @Environment(\.presentationMode) private var presentationMode
 
-    private typealias Strings = L10n.Auth
-    private typealias Images = Asset.Assets.Image.Cards
+    private typealias Strings = L10n.Cards.Add
     private typealias Colors = Asset.Assets.Color
 
     @ObservedObject private var viewModel: AddCardViewModel = AddCardViewModel()
@@ -40,7 +39,7 @@ struct AddCardView: View {
                             }
                         }
                     } label: {
-                        Text("Save card")
+                        Text(Strings.Button.save)
                             .fontWeight(.semibold)
                             .padding([.leading, .trailing], 40)
                             .padding([.top, .bottom], 8)
@@ -53,7 +52,7 @@ struct AddCardView: View {
 
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
-                        CommonTextField(title: "Name",
+                        CommonTextField(title: Strings.name,
                                         text: $viewModel.name,
                                         placeholder: "Visa Rappi",
                                         textColor: .black,
@@ -64,7 +63,7 @@ struct AddCardView: View {
                             .background(Color.white)
                             .cornerRadius(8)
 
-                        CommonTextField(title: "Credit limit",
+                        CommonTextField(title: Strings.creditLimit,
                                         text: $viewModel.limit,
                                         placeholder: "",
                                         textColor: .black,
@@ -75,7 +74,7 @@ struct AddCardView: View {
                             .background(Color.white)
                             .cornerRadius(8)
 
-                        PickerField(title: "Card Type",
+                        PickerField(title: Strings.cardType,
                                     textColor: .black,
                                     borderColor: .clear,
                                     icon: "",
@@ -96,7 +95,7 @@ struct AddCardView: View {
                             .background(Color.white)
                             .cornerRadius(8)
 
-                        PickerField(title: "Bank",
+                        PickerField(title: Strings.bank,
                                     textColor: .black,
                                     borderColor: .clear,
                                     icon: "building.columns.circle",
@@ -111,7 +110,7 @@ struct AddCardView: View {
                             .background(Color.white)
                             .cornerRadius(8)
 
-                        PickerField(title: "Closing Day",
+                        PickerField(title: Strings.closingDay,
                                     textColor: .black,
                                     borderColor: .clear,
                                     icon: "calendar.circle",
@@ -126,7 +125,7 @@ struct AddCardView: View {
                             .background(Color.white)
                             .cornerRadius(8)
 
-                        PickerField(title: "Limit pay day",
+                        PickerField(title: Strings.limitDay,
                                     textColor: .black,
                                     borderColor: .clear,
                                     icon: "calendar.circle",
@@ -152,41 +151,5 @@ struct AddCardView: View {
 struct AddCardView_Previews: PreviewProvider {
     static var previews: some View {
         AddCardView()
-    }
-}
-
-struct PickerField: View {
-    let title: String
-
-    let textColor: Color
-
-    let borderColor: Color
-
-    let icon: String?
-
-    let iconColor: Color
-
-    let picker: AnyView
-
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .foregroundColor(textColor)
-                .fontWeight(.semibold)
-
-            HStack {
-                if let icon = icon {
-                    Image(systemName: icon)
-                        .foregroundColor(iconColor)
-                }
-
-                picker
-                    .foregroundColor(textColor)
-            }
-
-            Divider()
-                .frame(height: 1)
-                .background(borderColor)
-        }
     }
 }

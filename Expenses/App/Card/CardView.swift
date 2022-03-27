@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     private typealias Colors = Asset.Assets.Color
+    private typealias Strings = L10n.Cards.List
 
     @ObservedObject private var viewModel = CardsViewModel()
 
@@ -29,7 +30,7 @@ struct CardView: View {
                     }
                 } else {
                     EmptyView(image: "emptyCards",
-                              text: "Ooops, it looks like you don't have any cards added.",
+                              text: Strings.Empty.title,
                               textColor: Color(Colors.green.name),
                               backgroundColor: .white)
                 }
@@ -39,7 +40,7 @@ struct CardView: View {
             }) {
                 AddCardView()
             }
-            .navigationTitle("Cards")
+            .navigationTitle(Strings.title)
             .navigationBarItems(trailing: Button {
                 showAddCardView = true
             } label: {

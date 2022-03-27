@@ -42,6 +42,35 @@ public enum L10n {
     }
   }
 
+  public enum Cards {
+    public enum Add {
+      /// Bank
+      public static let bank = L10n.tr("Localizable", "cards.add.bank")
+      /// Card Type
+      public static let cardType = L10n.tr("Localizable", "cards.add.cardType")
+      /// Closing Day
+      public static let closingDay = L10n.tr("Localizable", "cards.add.closingDay")
+      /// Credit Limit
+      public static let creditLimit = L10n.tr("Localizable", "cards.add.creditLimit")
+      /// Pay Limit Day
+      public static let limitDay = L10n.tr("Localizable", "cards.add.limitDay")
+      /// Name
+      public static let name = L10n.tr("Localizable", "cards.add.name")
+      public enum Button {
+        /// Save card
+        public static let save = L10n.tr("Localizable", "cards.add.button.save")
+      }
+    }
+    public enum List {
+      /// Cards
+      public static let title = L10n.tr("Localizable", "cards.list.title")
+      public enum Empty {
+        /// Ooops, it looks like you don't have any cards added.
+        public static let title = L10n.tr("Localizable", "cards.list.empty.title")
+      }
+    }
+  }
+
   public enum Landing {
     /// Keep track of your expenses on credit cards
     public static let title = L10n.tr("Localizable", "landing.title")

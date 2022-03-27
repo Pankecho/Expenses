@@ -19,3 +19,12 @@
 "auth.button.alreadyHaveAccount" = "Already have an account? Login";
 "auth.alert.title" = "Error";
 "auth.alert.button.ok" = "Accept";
+"cards.list.title" = "Cards";
+"cards.list.empty.title" = "Ooops, it looks like you don't have any cards added.";
+"cards.add.button.save" = "Save card";
+"cards.add.name" = "Name";
+"cards.add.creditLimit" = "Credit Limit";
+"cards.add.cardType" = "Card Type";
+"cards.add.bank" = "Bank";
+"cards.add.closingDay" = "Closing Day";
+"cards.add.limitDay" = "Pay Limit Day";
