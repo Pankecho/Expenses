@@ -8,33 +8,61 @@
 import SwiftUI
 
 struct CardView: View {
-    private typealias Strings = L10n.Auth
+    private typealias Colors = Asset.Assets.Color
 
     @ObservedObject private var viewModel = CardsViewModel()
 
     @State private var showAddCardView: Bool = false
 
     var body: some View {
-        VStack {
-            List {
-                ForEach(viewModel.cardsVM, id: \.self) { item in
-                    CardItemView(item: item)
+        NavigationView {
+            VStack {
+                if !viewModel.cardsVM.isEmpty {
+                    List {
+                        ForEach(viewModel.cardsVM, id: \.self) { item in
+                            CardItemView(item: item)
+                        }
+                    }
+                } else {
+                    EmptyView(image: "emptyCards",
+                              text: "Ooops, it looks like you don't have any cards added.",
+                              textColor: Color(Colors.green.name),
+                              backgroundColor: .white)
                 }
             }
-
-            Button {
-                showAddCardView = true
-            } label: {
-                Text("Add card")
-                    .foregroundColor(.black)
-            }
-            .sheet(isPresented: $showAddCardView) {
+            .sheet(isPresented: $showAddCardView, onDismiss: {
+                viewModel.getCards()
+            }) {
                 AddCardView()
             }
+            .navigationTitle("Cards")
+            .navigationBarItems(trailing: Button {
+                showAddCardView = true
+            } label: {
+                Image(systemName: "plus.circle.fill")
+                    .foregroundColor(.white)
+            })
         }
-        .onAppear {
-            viewModel.getCards()
-        }
+    }
+
+    init() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.largeTitleTextAttributes = [
+            .foregroundColor: UIColor.white
+        ]
+
+        navBarAppearance.titleTextAttributes = [
+            .foregroundColor: UIColor.white
+        ]
+
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        UINavigationBar.appearance().compactAppearance = navBarAppearance
+        UINavigationBar.appearance().backgroundColor = UIColor(Color(Colors.blue.name))
+        // Tint color for back button
+        UINavigationBar.appearance().tintColor = .white
+
+        viewModel.getCards()
     }
 }
 

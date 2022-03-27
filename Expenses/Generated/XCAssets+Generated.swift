@@ -36,6 +36,7 @@ internal enum Asset {
         internal static let mastercard = ImageAsset(name: "mastercard")
         internal static let visa = ImageAsset(name: "visa")
       }
+      internal static let emptyCards = ImageAsset(name: "emptyCards")
       internal static let landing = ImageAsset(name: "landing")
       internal static let savings = ImageAsset(name: "savings")
     }
