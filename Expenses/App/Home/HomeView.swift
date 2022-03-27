@@ -12,9 +12,11 @@ struct HomeView: View {
 
     @State var tagSelected: Int = 0
 
+    private let cardsViewModel = CardsViewModel()
+
     var body: some View {
         TabView(selection: $tagSelected) {
-            CardView()
+            CardView(vm: cardsViewModel)
                 .tabItem {
                     Image(systemName: "creditcard")
                     Text("Cards")

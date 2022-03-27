@@ -11,7 +11,7 @@ struct CardView: View {
     private typealias Colors = Asset.Assets.Color
     private typealias Strings = L10n.Cards.List
 
-    @ObservedObject private var viewModel = CardsViewModel()
+    @ObservedObject private var viewModel: CardsViewModel
 
     @State private var showAddCardView: Bool = false
 
@@ -50,7 +50,7 @@ struct CardView: View {
         }
     }
 
-    init() {
+    init(vm: CardsViewModel) {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.largeTitleTextAttributes = [
             .foregroundColor: UIColor.white
@@ -67,12 +67,13 @@ struct CardView: View {
         // Tint color for back button
         UINavigationBar.appearance().tintColor = .white
 
+        viewModel = vm
         viewModel.getCards()
     }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView()
+        CardView(vm: CardsViewModel())
     }
 }
