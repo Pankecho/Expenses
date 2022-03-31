@@ -42,6 +42,9 @@
 		CBB9E07127BE31CF00136C7C /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9E07027BE31CF00136C7C /* LandingView.swift */; };
 		CBB9E07A27BEEA9E00136C7C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBB9E07927BEEA9E00136C7C /* Localizable.strings */; };
 		CBBE84AF27F53A4F00FE9DCE /* ExpenseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBE84AE27F53A4F00FE9DCE /* ExpenseClient.swift */; };
+		CBBE84B127F53D6200FE9DCE /* ExpenseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBE84B027F53D6200FE9DCE /* ExpenseListViewModel.swift */; };
+		CBBE84B327F53D6F00FE9DCE /* AddExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBE84B227F53D6F00FE9DCE /* AddExpenseViewModel.swift */; };
+		CBBE84B527F5413500FE9DCE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBE84B427F5413500FE9DCE /* Date.swift */; };
 		CBF5E62127C46B6D0089880E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5E62027C46B6D0089880E /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +101,9 @@
 		CBB9E07027BE31CF00136C7C /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		CBB9E07927BEEA9E00136C7C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		CBBE84AE27F53A4F00FE9DCE /* ExpenseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseClient.swift; sourceTree = "<group>"; };
+		CBBE84B027F53D6200FE9DCE /* ExpenseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListViewModel.swift; sourceTree = "<group>"; };
+		CBBE84B227F53D6F00FE9DCE /* AddExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewModel.swift; sourceTree = "<group>"; };
+		CBBE84B427F5413500FE9DCE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CBF5E62027C46B6D0089880E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -294,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				CB7EB1DC27EFB77B007BC956 /* Double.swift */,
+				CBBE84B427F5413500FE9DCE /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -319,6 +326,8 @@
 		CBBE84AD27F53A2A00FE9DCE /* Expenses */ = {
 			isa = PBXGroup;
 			children = (
+				CBBE84B027F53D6200FE9DCE /* ExpenseListViewModel.swift */,
+				CBBE84B227F53D6F00FE9DCE /* AddExpenseViewModel.swift */,
 			);
 			path = Expenses;
 			sourceTree = "<group>";
@@ -509,6 +518,7 @@
 				CB7293B327BF0FF200C0F592 /* Card.swift in Sources */,
 				CB26683727EE6D8100A1DB46 /* CommonTextField.swift in Sources */,
 				CB7EB1E427EFFC37007BC956 /* EmptyView.swift in Sources */,
+				CBBE84B527F5413500FE9DCE /* Date.swift in Sources */,
 				CB72939A27BEF83300C0F592 /* AuthView.swift in Sources */,
 				CB26683C27EE7DAC00A1DB46 /* CardsViewModel.swift in Sources */,
 				CB7EB1DF27EFB7E2007BC956 /* CardItemView.swift in Sources */,
@@ -517,9 +527,11 @@
 				CBB9E07127BE31CF00136C7C /* LandingView.swift in Sources */,
 				CBA2787A27D6C3D600998FE0 /* HomeView.swift in Sources */,
 				CB7293AD27BF0E0D00C0F592 /* Bank.swift in Sources */,
+				CBBE84B127F53D6200FE9DCE /* ExpenseListViewModel.swift in Sources */,
 				CB26684027EE85B700A1DB46 /* CardView.swift in Sources */,
 				CB732D4B27EE9439001D5CD6 /* AddCardView.swift in Sources */,
 				CB7EB1DB27EFAC9A007BC956 /* AddCardViewModel.swift in Sources */,
+				CBBE84B327F53D6F00FE9DCE /* AddExpenseViewModel.swift in Sources */,
 				CB7EB1DD27EFB77B007BC956 /* Double.swift in Sources */,
 				CBBE84AF27F53A4F00FE9DCE /* ExpenseClient.swift in Sources */,
 				CBB9E04627BE300E00136C7C /* ExpensesApp.swift in Sources */,
