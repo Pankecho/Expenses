@@ -41,6 +41,7 @@
 		CBB9E06327BE300F00136C7C /* ExpensesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9E06227BE300F00136C7C /* ExpensesUITestsLaunchTests.swift */; };
 		CBB9E07127BE31CF00136C7C /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9E07027BE31CF00136C7C /* LandingView.swift */; };
 		CBB9E07A27BEEA9E00136C7C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBB9E07927BEEA9E00136C7C /* Localizable.strings */; };
+		CBBE84AF27F53A4F00FE9DCE /* ExpenseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBE84AE27F53A4F00FE9DCE /* ExpenseClient.swift */; };
 		CBF5E62127C46B6D0089880E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5E62027C46B6D0089880E /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		CBB9E06227BE300F00136C7C /* ExpensesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CBB9E07027BE31CF00136C7C /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		CBB9E07927BEEA9E00136C7C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		CBBE84AE27F53A4F00FE9DCE /* ExpenseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseClient.swift; sourceTree = "<group>"; };
 		CBF5E62027C46B6D0089880E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 		CB72939727BEF80100C0F592 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CBBE84AD27F53A2A00FE9DCE /* Expenses */,
 				CB26683A27EE7D9200A1DB46 /* Card */,
 				CBA2787627D6C3C200998FE0 /* Home */,
 				CB72939827BEF81D00C0F592 /* Auth */,
@@ -205,6 +208,7 @@
 			children = (
 				CBA2787427D6C18600998FE0 /* AuthClient.swift */,
 				CB26683D27EE7DBA00A1DB46 /* CardClient.swift */,
+				CBBE84AE27F53A4F00FE9DCE /* ExpenseClient.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -310,6 +314,13 @@
 				CB48A84627BEEE78005D2385 /* XCAssets+Generated.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		CBBE84AD27F53A2A00FE9DCE /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Expenses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,6 +521,7 @@
 				CB732D4B27EE9439001D5CD6 /* AddCardView.swift in Sources */,
 				CB7EB1DB27EFAC9A007BC956 /* AddCardViewModel.swift in Sources */,
 				CB7EB1DD27EFB77B007BC956 /* Double.swift in Sources */,
+				CBBE84AF27F53A4F00FE9DCE /* ExpenseClient.swift in Sources */,
 				CBB9E04627BE300E00136C7C /* ExpensesApp.swift in Sources */,
 				CB17D45E27EE5BE60093E29A /* User.swift in Sources */,
 				CB48A84827BEEE78005D2385 /* XCAssets+Generated.swift in Sources */,

@@ -1,28 +1,22 @@
 //
-//  CardClient.swift
+//  ExpenseClient.swift
 //  Expenses
 //
-//  Created by Juan Pablo Martinez Ruiz on 25/03/22.
+//  Created by Juan Pablo Martinez Ruiz on 30/03/22.
 //
 
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-enum CustomError: Error {
-    case noData
-    case multipleIDs
+protocol ExpenseServiceProtocol {
+    func getExpenses(completion: @escaping((Result<[Expense], Error>) -> Void))
+    func addExpense(item: Expense, completion: @escaping((Result<Expense, Error>) -> Void))
+    func updateExpense(item: Expense, completion: @escaping((Result<Expense, Error>) -> Void))
+    func removeExpense(with id: String, completion: @escaping((Result<Void, Error>) -> Void))
 }
 
-protocol CardServiceProtocol {
-    func getCards(completion: @escaping((Result<[Card], Error>) -> Void))
-    func addCard(card: Card, completion: @escaping((Result<Card, Error>) -> Void))
-    func updateCard(card: Card, completion: @escaping((Result<Card, Error>) -> Void))
-    func removeCard(with id: String, completion: @escaping((Result<Void, Error>) -> Void))
-}
-
-final class FirebaseCardClient: CardServiceProtocol {
-
+final class FirebaseExpenseClient {
     private var userID: String {
         guard let user = AuthViewModel.shared.user else {
             fatalError("The user is not logged in")
@@ -31,16 +25,19 @@ final class FirebaseCardClient: CardServiceProtocol {
         return user.id
     }
 
-    private let collectionName: String = "cards"
+    private let collectionName: String = "expenses"
     private let db = Firestore.firestore()
 
     private var dbReference: CollectionReference {
         return db.collection(collectionName)
     }
+}
 
-    func getCards(completion: @escaping ((Result<[Card], Error>) -> Void)) {
+extension FirebaseExpenseClient: ExpenseServiceProtocol {
+    func getExpenses(completion: @escaping ((Result<[Expense], Error>) -> Void)) {
         dbReference.whereField("user", in: [userID]).getDocuments { snapshot, error in
             if let error = error {
+                NSLog("There was an error trying to fetch the Expenses: \(error)")
                 completion(.failure(error))
                 return
             }
@@ -51,31 +48,33 @@ final class FirebaseCardClient: CardServiceProtocol {
             }
 
             do {
-                let cards = try snapshot.documents.map({ try $0.data(as: Card.self) })
-                completion(.success(cards))
+                let expenses = try snapshot.documents.map({ try $0.data(as: Expense.self) })
+                completion(.success(expenses))
             } catch {
+                NSLog("There was an error trying to parse the Expenses response: \(error)")
                 completion(.failure(error))
             }
         }
     }
 
-    func addCard(card: Card, completion: @escaping ((Result<Card, Error>) -> Void)) {
+    func addExpense(item: Expense, completion: @escaping ((Result<Expense, Error>) -> Void)) {
         do {
-            _ = try dbReference.addDocument(from: card)
-            completion(.success(card))
+            _ = try dbReference.addDocument(from: item)
+            completion(.success(item))
         } catch {
-            NSLog("There was an error trying to save the card: \(error)")
+            NSLog("There was an error trying to save the Expense: \(error)")
             completion(.failure(error))
         }
     }
 
-    func updateCard(card: Card, completion: @escaping ((Result<Card, Error>) -> Void)) {
-        //
+    func updateExpense(item: Expense, completion: @escaping ((Result<Expense, Error>) -> Void)) {
+        // TODO
     }
 
-    func removeCard(with id: String, completion: @escaping ((Result<Void, Error>) -> Void)) {
+    func removeExpense(with id: String, completion: @escaping ((Result<Void, Error>) -> Void)) {
         dbReference.whereField("id", in: [id]).getDocuments(completion: { snapshot, error in
             if let error = error {
+                NSLog("There was an error trying to fetch the Expense before delete: \(error)")
                 completion(.failure(error))
                 return
             }
@@ -92,6 +91,7 @@ final class FirebaseCardClient: CardServiceProtocol {
 
             self.dbReference.document(documentID).delete { error in
                 if let error = error {
+                    NSLog("There was an error trying to delete the Expense: \(error)")
                     completion(.failure(error))
                     return
                 }
