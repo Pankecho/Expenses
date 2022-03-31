@@ -28,3 +28,6 @@
 "cards.add.bank" = "Bank";
 "cards.add.closingDay" = "Closing Day";
 "cards.add.limitDay" = "Pay Limit Day";
+"home.tabs.cardsTitle" = "Cards";
+"home.tabs.expensesTitle" = "Expenses";
+"home.tabs.settingsTitle" = "Settings";

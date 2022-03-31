@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    typealias Colors = Asset.Assets.Color
+    private typealias Colors = Asset.Assets.Color
+    private typealias Strings = L10n.Home.Tabs
 
     @State var tagSelected: Int = 0
 
@@ -19,21 +20,21 @@ struct HomeView: View {
             CardView(vm: cardsViewModel)
                 .tabItem {
                     Image(systemName: "creditcard")
-                    Text("Cards")
+                    Text(Strings.cardsTitle)
                 }
                 .tag(0)
 
             Text("Expenses")
                 .tabItem {
                     Image(systemName: "list.dash")
-                    Text("Expenses")
+                    Text(Strings.expensesTitle)
                 }
                 .tag(1)
 
             SettingsView()
                 .tabItem {
                     Image(systemName: "gear")
-                    Text("Settings")
+                    Text(Strings.settingsTitle)
                 }
                 .tag(2)
         }

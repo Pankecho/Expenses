@@ -71,6 +71,17 @@ public enum L10n {
     }
   }
 
+  public enum Home {
+    public enum Tabs {
+      /// Cards
+      public static let cardsTitle = L10n.tr("Localizable", "home.tabs.cardsTitle")
+      /// Expenses
+      public static let expensesTitle = L10n.tr("Localizable", "home.tabs.expensesTitle")
+      /// Settings
+      public static let settingsTitle = L10n.tr("Localizable", "home.tabs.settingsTitle")
+    }
+  }
+
   public enum Landing {
     /// Keep track of your expenses on credit cards
     public static let title = L10n.tr("Localizable", "landing.title")
