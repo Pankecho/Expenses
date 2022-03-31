@@ -26,7 +26,7 @@ struct HomeView: View {
 
             Text("Expenses")
                 .tabItem {
-                    Image(systemName: "list.dash")
+                    Image(systemName: "banknote")
                     Text(Strings.expensesTitle)
                 }
                 .tag(1)
