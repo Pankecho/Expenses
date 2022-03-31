@@ -71,6 +71,10 @@ struct CardViewModel: Hashable {
 
     private let card: Card
 
+    var id: String {
+        return card.id
+    }
+
     var name: String {
         return card.name
     }

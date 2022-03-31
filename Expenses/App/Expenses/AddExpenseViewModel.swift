@@ -29,7 +29,7 @@ final class AddExpenseViewModel: ObservableObject {
 
     var errorMessage: String = ""
 
-    func addCard(completion: @escaping((Bool) -> Void)) {
+    func addExpense(completion: @escaping((Bool) -> Void)) {
         guard let amount = Double(amount), amount > 0 else {
             return
         }

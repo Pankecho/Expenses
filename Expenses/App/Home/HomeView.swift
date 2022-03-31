@@ -14,6 +14,7 @@ struct HomeView: View {
     @State var tagSelected: Int = 0
 
     private let cardsViewModel = CardsViewModel()
+    private let expensesViewModel = ExpenseListViewModel()
 
     var body: some View {
         TabView(selection: $tagSelected) {
@@ -24,7 +25,8 @@ struct HomeView: View {
                 }
                 .tag(0)
 
-            Text("Expenses")
+            ExpensesView(cvm: cardsViewModel,
+                         evm: expensesViewModel)
                 .tabItem {
                     Image(systemName: "banknote")
                     Text(Strings.expensesTitle)

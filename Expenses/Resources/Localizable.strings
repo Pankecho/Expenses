@@ -31,3 +31,13 @@
 "home.tabs.cardsTitle" = "Cards";
 "home.tabs.expensesTitle" = "Expenses";
 "home.tabs.settingsTitle" = "Settings";
+"expenses.list.title" = "Expenses";
+"expenses.list.empty.title" = "Ooops, it looks like you don't have any expenses yet.";
+"expenses.add.button.save" = "Save";
+"expenses.add.description" = "Description";
+"expenses.add.amount" = "Amount";
+"expenses.add.expenseType" = "Expense Type";
+"expenses.add.date" = "Date";
+"expenses.add.card" = "Card";
+"expenses.add.alert.title" = "Error";
+"expenses.add.alert.button.ok" = "Accept";

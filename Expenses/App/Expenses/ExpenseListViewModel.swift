@@ -18,6 +18,10 @@ final class ExpenseListViewModel: ObservableObject {
 
     var errorMessage: String = ""
 
+    var totalAmount: String {
+        return items.reduce(0.0, { $0 + $1.amount }).formatAsCurrency()
+    }
+
     init(client: ExpenseServiceProtocol) {
         self.client = client
     }
@@ -68,6 +72,10 @@ struct ExpenseViewModel: Hashable {
     }
 
     private let expense: Expense
+
+    var id: String {
+        return expense.id
+    }
 
     var description: String {
         return expense.description

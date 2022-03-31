@@ -71,6 +71,41 @@ public enum L10n {
     }
   }
 
+  public enum Expenses {
+    public enum Add {
+      /// Amount
+      public static let amount = L10n.tr("Localizable", "expenses.add.amount")
+      /// Card
+      public static let card = L10n.tr("Localizable", "expenses.add.card")
+      /// Date
+      public static let date = L10n.tr("Localizable", "expenses.add.date")
+      /// Description
+      public static let description = L10n.tr("Localizable", "expenses.add.description")
+      /// Expense Type
+      public static let expenseType = L10n.tr("Localizable", "expenses.add.expenseType")
+      public enum Alert {
+        /// Error
+        public static let title = L10n.tr("Localizable", "expenses.add.alert.title")
+        public enum Button {
+          /// Accept
+          public static let ok = L10n.tr("Localizable", "expenses.add.alert.button.ok")
+        }
+      }
+      public enum Button {
+        /// Save
+        public static let save = L10n.tr("Localizable", "expenses.add.button.save")
+      }
+    }
+    public enum List {
+      /// Expenses
+      public static let title = L10n.tr("Localizable", "expenses.list.title")
+      public enum Empty {
+        /// Ooops, it looks like you don't have any expenses yet.
+        public static let title = L10n.tr("Localizable", "expenses.list.empty.title")
+      }
+    }
+  }
+
   public enum Home {
     public enum Tabs {
       /// Cards
