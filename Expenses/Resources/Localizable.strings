@@ -41,3 +41,13 @@
 "expenses.add.card" = "Card";
 "expenses.add.alert.title" = "Error";
 "expenses.add.alert.button.ok" = "Accept";
+"filters.month.january" = "January";
+"filters.month.february" = "February";
+"filters.month.march" = "March";
+"filters.month.april" = "April";
+"filters.month.may" = "May";
+"filters.month.august" = "August";
+"filters.month.september" = "September";
+"filters.month.october" = "October";
+"filters.month.november" = "November";
+"filters.month.december" = "December";

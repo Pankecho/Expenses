@@ -106,6 +106,31 @@ public enum L10n {
     }
   }
 
+  public enum Filters {
+    public enum Month {
+      /// April
+      public static let april = L10n.tr("Localizable", "filters.month.april")
+      /// August
+      public static let august = L10n.tr("Localizable", "filters.month.august")
+      /// December
+      public static let december = L10n.tr("Localizable", "filters.month.december")
+      /// February
+      public static let february = L10n.tr("Localizable", "filters.month.february")
+      /// January
+      public static let january = L10n.tr("Localizable", "filters.month.january")
+      /// March
+      public static let march = L10n.tr("Localizable", "filters.month.march")
+      /// May
+      public static let may = L10n.tr("Localizable", "filters.month.may")
+      /// November
+      public static let november = L10n.tr("Localizable", "filters.month.november")
+      /// October
+      public static let october = L10n.tr("Localizable", "filters.month.october")
+      /// September
+      public static let september = L10n.tr("Localizable", "filters.month.september")
+    }
+  }
+
   public enum Home {
     public enum Tabs {
       /// Cards
