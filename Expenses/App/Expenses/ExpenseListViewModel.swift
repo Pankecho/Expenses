@@ -14,6 +14,9 @@ final class ExpenseListViewModel: ObservableObject {
     @Published var expensesVM: [ExpenseViewModel] = []
     @Published var showError: Bool = false
 
+    @Published var monthSelected: Month
+    @Published var yearSelected: Int
+
     private var items: [Expense] = []
 
     var errorMessage: String = ""
@@ -24,14 +27,22 @@ final class ExpenseListViewModel: ObservableObject {
 
     init(client: ExpenseServiceProtocol) {
         self.client = client
+        let currentDate = Date()
+        let components = Calendar.current.dateComponents([.year, .month], from: currentDate)
+        self.monthSelected = Month(rawValue: components.month ?? 1) ?? .january
+        self.yearSelected = components.year ?? 2022
     }
 
     init() {
         self.client = FirebaseExpenseClient()
+        let currentDate = Date()
+        let components = Calendar.current.dateComponents([.year, .month], from: currentDate)
+        self.monthSelected = Month(rawValue: components.month ?? 1) ?? .january
+        self.yearSelected = components.year ?? 2022
     }
 
     func getExpenses() {
-        client.getExpenses { result in
+        client.getExpenses(with: [ MonthFilter(year: yearSelected, month: monthSelected) ]) { result in
             switch result {
             case .success(let expenses):
                 DispatchQueue.main.async {
@@ -82,7 +93,7 @@ struct ExpenseViewModel: Hashable {
     }
 
     var date: String {
-        return expense.date.getFormattedDate(format: "dd/MM/yyyy HH:mm:ss")
+        return expense.date.getFormattedDate(format: "dd/MM/yyyy")
     }
 
     var expenseType: String {

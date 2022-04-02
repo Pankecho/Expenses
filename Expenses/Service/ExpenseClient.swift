@@ -10,7 +10,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 protocol ExpenseServiceProtocol {
-    func getExpenses(completion: @escaping((Result<[Expense], Error>) -> Void))
+    func getExpenses(with filters: [Filter], completion: @escaping((Result<[Expense], Error>) -> Void))
     func addExpense(item: Expense, completion: @escaping((Result<Expense, Error>) -> Void))
     func updateExpense(item: Expense, completion: @escaping((Result<Expense, Error>) -> Void))
     func removeExpense(with id: String, completion: @escaping((Result<Void, Error>) -> Void))
@@ -31,11 +31,17 @@ final class FirebaseExpenseClient {
     private var dbReference: CollectionReference {
         return db.collection(collectionName)
     }
+
+    private func injectUser(with filters: [Filter]) -> [Filter] {
+        var newFilters = filters
+        newFilters.append(UserFilter(value: userID))
+        return newFilters
+    }
 }
 
 extension FirebaseExpenseClient: ExpenseServiceProtocol {
-    func getExpenses(completion: @escaping ((Result<[Expense], Error>) -> Void)) {
-        dbReference.whereField("user", in: [userID]).getDocuments { snapshot, error in
+    func getExpenses(with filters: [Filter], completion: @escaping ((Result<[Expense], Error>) -> Void)) {
+        dbReference.whereFields(with: injectUser(with: filters)).getDocuments { snapshot, error in
             if let error = error {
                 NSLog("There was an error trying to fetch the Expenses: \(error)")
                 completion(.failure(error))
@@ -99,5 +105,43 @@ extension FirebaseExpenseClient: ExpenseServiceProtocol {
                 completion(.success(()))
             }
         })
+    }
+}
+
+extension CollectionReference {
+    func whereFields(with filters: [Filter]) -> Query {
+        var query: Query = whereField("", in: [])
+        for filter in filters {
+            switch filter.type {
+            case .month:
+                if let filter = filter as? MonthFilter {
+                    query = query.whereField(value: filter)
+                }
+            case .userID:
+                if let filter = filter as? UserFilter {
+                    query = query.whereField(filter.queryName, isEqualTo: filter.value)
+                }
+            }
+        }
+        return query
+    }
+}
+
+extension Query {
+    func whereField(value: MonthFilter) -> Query {
+        let filterComponents = DateComponents(year: value.year, month: value.month.rawValue)
+        guard let date = Calendar.current.date(from: filterComponents) else {
+            fatalError("Couldn't create date from filter")
+        }
+
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
+
+        guard
+            let range = Calendar.current.range(of: .day, in: .month, for: date),
+            let start = Calendar.current.date(from: components),
+            let end = Calendar.current.date(byAdding: .day, value: range.count - 1, to: start) else {
+                fatalError("Couldn't find start date or calculate end date")
+            }
+        return whereField(value.queryName, isGreaterThan: start).whereField(value.queryName, isLessThan: end)
     }
 }
