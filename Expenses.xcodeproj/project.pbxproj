@@ -47,6 +47,7 @@
 		CBBE84B327F53D6F00FE9DCE /* AddExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBE84B227F53D6F00FE9DCE /* AddExpenseViewModel.swift */; };
 		CBBE84B527F5413500FE9DCE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBE84B427F5413500FE9DCE /* Date.swift */; };
 		CBBE84B727F5470500FE9DCE /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBE84B627F5470500FE9DCE /* AddExpenseView.swift */; };
+		CBE1C4E027F8F7AA00B95404 /* ExpenseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE1C4DF27F8F7AA00B95404 /* ExpenseItemView.swift */; };
 		CBE42D6527F54C6000F26CA6 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE42D6427F54C6000F26CA6 /* ExpensesView.swift */; };
 		CBF5E62127C46B6D0089880E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5E62027C46B6D0089880E /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -109,6 +110,7 @@
 		CBBE84B227F53D6F00FE9DCE /* AddExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewModel.swift; sourceTree = "<group>"; };
 		CBBE84B427F5413500FE9DCE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CBBE84B627F5470500FE9DCE /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		CBE1C4DF27F8F7AA00B95404 /* ExpenseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItemView.swift; sourceTree = "<group>"; };
 		CBE42D6427F54C6000F26CA6 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		CBF5E62027C46B6D0089880E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -337,6 +339,7 @@
 				CBBE84B227F53D6F00FE9DCE /* AddExpenseViewModel.swift */,
 				CBBE84B627F5470500FE9DCE /* AddExpenseView.swift */,
 				CBE42D6427F54C6000F26CA6 /* ExpensesView.swift */,
+				CBE1C4DF27F8F7AA00B95404 /* ExpenseItemView.swift */,
 			);
 			path = Expenses;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				CBBE84AF27F53A4F00FE9DCE /* ExpenseClient.swift in Sources */,
 				CBB9E04627BE300E00136C7C /* ExpensesApp.swift in Sources */,
 				CB17D45E27EE5BE60093E29A /* User.swift in Sources */,
+				CBE1C4E027F8F7AA00B95404 /* ExpenseItemView.swift in Sources */,
 				CB48A84827BEEE78005D2385 /* XCAssets+Generated.swift in Sources */,
 				CB26683E27EE7DBA00A1DB46 /* CardClient.swift in Sources */,
 				CB7EB1E627F12912007BC956 /* PickerField.swift in Sources */,

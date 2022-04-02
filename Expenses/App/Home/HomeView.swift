@@ -14,7 +14,7 @@ struct HomeView: View {
     @State var tagSelected: Int = 0
 
     private let cardsViewModel = CardsViewModel()
-    private let expensesViewModel = ExpenseListViewModel()
+    private let expensesViewModel: ExpenseListViewModel
 
     var body: some View {
         TabView(selection: $tagSelected) {
@@ -47,6 +47,8 @@ struct HomeView: View {
         UITabBar.appearance().backgroundColor = UIColor(Color(Colors.blue.name))
         UITabBar.appearance().unselectedItemTintColor = .lightGray
         UITabBar.appearance().isTranslucent = true
+
+        self.expensesViewModel = ExpenseListViewModel(cardsVM: cardsViewModel)
     }
 }
 

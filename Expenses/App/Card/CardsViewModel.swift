@@ -95,3 +95,7 @@ struct CardViewModel: Hashable {
         self.card = c
     }
 }
+
+extension CardViewModel {
+    static let empty = CardViewModel(c: Card(id: "", name: "", type: .mastercard, bank: .banamex, limit: 0.0, closingDay: 1, payDay: 1, user: ""))
+}

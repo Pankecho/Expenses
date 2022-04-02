@@ -25,16 +25,22 @@ final class ExpenseListViewModel: ObservableObject {
         return items.reduce(0.0, { $0 + $1.amount }).formatAsCurrency()
     }
 
-    init(client: ExpenseServiceProtocol) {
-        self.client = client
+    private let cardsVM: CardsViewModel
+
+    init(cardsVM: CardsViewModel) {
+        self.client = FirebaseExpenseClient()
+        self.cardsVM = cardsVM
+
         let currentDate = Date()
         let components = Calendar.current.dateComponents([.year, .month], from: currentDate)
         self.monthSelected = Month(rawValue: components.month ?? 1) ?? .january
         self.yearSelected = components.year ?? 2022
     }
 
-    init() {
-        self.client = FirebaseExpenseClient()
+    init(client: ExpenseServiceProtocol, cardsVM: CardsViewModel) {
+        self.client = client
+        self.cardsVM = cardsVM
+
         let currentDate = Date()
         let components = Calendar.current.dateComponents([.year, .month], from: currentDate)
         self.monthSelected = Month(rawValue: components.month ?? 1) ?? .january
@@ -53,7 +59,14 @@ final class ExpenseListViewModel: ObservableObject {
             case .success(let expenses):
                 DispatchQueue.main.async {
                     self.items = expenses
-                    self.expensesVM = expenses.map({ ExpenseViewModel(item: $0) })
+                    self.expensesVM = expenses.map({ item in
+                        print(item)
+                        guard let card = self.cardsVM.cardsVM.first(where: { $0.id == item.card }) else {
+                            return ExpenseViewModel(item: item, card: CardViewModel.empty)
+                        }
+
+                        return ExpenseViewModel(item: item, card: card)
+                    })
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -71,7 +84,13 @@ final class ExpenseListViewModel: ObservableObject {
             case .success:
                 DispatchQueue.main.async {
                     self.items.remove(at: index)
-                    self.expensesVM = self.items.map({ ExpenseViewModel(item: $0) })
+                    self.expensesVM = self.items.map({ item in
+                        guard let card = self.cardsVM.cardsVM.first(where: { $0.id == item.id }) else {
+                            return ExpenseViewModel(item: item, card: CardViewModel.empty)
+                        }
+
+                        return ExpenseViewModel(item: item, card: card)
+                    })
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -90,6 +109,8 @@ struct ExpenseViewModel: Hashable {
 
     private let expense: Expense
 
+    private let card: CardViewModel
+
     var id: String {
         return expense.id
     }
@@ -102,6 +123,10 @@ struct ExpenseViewModel: Hashable {
         return expense.date.getFormattedDate(format: "dd/MM/yyyy")
     }
 
+    var amount: String {
+        return expense.amount.formatAsCurrency()
+    }
+
     var expenseType: String {
         return expense.expenseType.rawValue
     }
@@ -110,7 +135,12 @@ struct ExpenseViewModel: Hashable {
         return expense.expenseType.icon
     }
 
-    init(item: Expense) {
+    var cardName: String {
+        return card.name
+    }
+
+    init(item: Expense, card: CardViewModel) {
         expense = item
+        self.card = card
     }
 }

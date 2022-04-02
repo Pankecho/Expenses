@@ -118,7 +118,7 @@ extension CollectionReference {
                 if let filter = filter as? MonthFilter {
                     query = query?.whereField(value: filter)
                 }
-                
+
             case .userID:
                 if let filter = filter as? UserFilter {
                     query = self.whereField(filter.queryName, isEqualTo: filter.value)
