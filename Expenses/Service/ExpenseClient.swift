@@ -110,19 +110,26 @@ extension FirebaseExpenseClient: ExpenseServiceProtocol {
 
 extension CollectionReference {
     func whereFields(with filters: [Filter]) -> Query {
-        var query: Query = whereField("", in: [])
+        var query: Query?
+
         for filter in filters {
             switch filter.type {
             case .month:
                 if let filter = filter as? MonthFilter {
-                    query = query.whereField(value: filter)
+                    query = query?.whereField(value: filter)
                 }
+                
             case .userID:
                 if let filter = filter as? UserFilter {
-                    query = query.whereField(filter.queryName, isEqualTo: filter.value)
+                    query = self.whereField(filter.queryName, isEqualTo: filter.value)
                 }
             }
         }
+
+        guard let query = query else {
+            fatalError("Couldn't create query from filters")
+        }
+
         return query
     }
 }

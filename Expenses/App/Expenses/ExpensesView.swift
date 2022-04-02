@@ -50,6 +50,9 @@ struct ExpensesView: View {
                 Image(systemName: "plus.circle.fill")
                     .foregroundColor(.white)
             })
+            .onAppear {
+                self.expensesViewModel.getExpenses()
+            }
         }
     }
 
@@ -72,7 +75,6 @@ struct ExpensesView: View {
 
         self.expensesViewModel = evm
         self.cardsViewModel = cvm
-        self.expensesViewModel.getExpenses()
     }
 }
 

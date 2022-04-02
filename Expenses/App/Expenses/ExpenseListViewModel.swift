@@ -41,8 +41,14 @@ final class ExpenseListViewModel: ObservableObject {
         self.yearSelected = components.year ?? 2022
     }
 
+    private func createFilters() -> [Filter] {
+        var filters = [Filter]()
+        filters.append(MonthFilter(year: yearSelected, month: monthSelected))
+        return filters
+    }
+
     func getExpenses() {
-        client.getExpenses(with: [ MonthFilter(year: yearSelected, month: monthSelected) ]) { result in
+        client.getExpenses(with: createFilters()) { result in
             switch result {
             case .success(let expenses):
                 DispatchQueue.main.async {
