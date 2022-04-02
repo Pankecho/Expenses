@@ -7,12 +7,20 @@
 
 import Foundation
 
+enum LoadingState {
+    case none
+    case loading
+    case success
+    case error
+}
+
 final class ExpenseListViewModel: ObservableObject {
     private let client: ExpenseServiceProtocol
 
     // Output
     @Published var expensesVM: [ExpenseViewModel] = []
     @Published var showError: Bool = false
+    @Published var loadingState: LoadingState = .none
 
     @Published var monthSelected: Month
     @Published var yearSelected: Int
@@ -54,24 +62,26 @@ final class ExpenseListViewModel: ObservableObject {
     }
 
     func getExpenses() {
+        loadingState = .loading
         client.getExpenses(with: createFilters()) { result in
             switch result {
             case .success(let expenses):
                 DispatchQueue.main.async {
                     self.items = expenses
                     self.expensesVM = expenses.map({ item in
-                        print(item)
                         guard let card = self.cardsVM.cardsVM.first(where: { $0.id == item.card }) else {
                             return ExpenseViewModel(item: item, card: CardViewModel.empty)
                         }
 
                         return ExpenseViewModel(item: item, card: card)
                     })
+                    self.loadingState = .success
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
                     self.showError = true
                     self.errorMessage = error.localizedDescription
+                    self.loadingState = .error
                 }
             }
         }

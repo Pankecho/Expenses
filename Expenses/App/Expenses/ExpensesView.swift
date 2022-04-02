@@ -10,31 +10,41 @@ import SwiftUI
 struct ExpensesView: View {
     private typealias Colors = Asset.Assets.Color
     private typealias Strings = L10n.Expenses.List
-    
+
     @ObservedObject private var expensesViewModel: ExpenseListViewModel
     @ObservedObject private var cardsViewModel: CardsViewModel
-    
+
     @State private var showAddExpenseView: Bool = false
-    
+
     var body: some View {
         NavigationView {
             VStack {
-                if !expensesViewModel.expensesVM.isEmpty {
-                    List {
-                        ForEach(expensesViewModel.expensesVM, id: \.id) { item in
-                            ExpenseItemView(vm: item)
+                switch expensesViewModel.loadingState {
+                case .none:
+                    Text("")
+                case .loading:
+                    LoaderView()
+                case .success:
+                    if !expensesViewModel.expensesVM.isEmpty {
+                        List {
+                            ForEach(expensesViewModel.expensesVM, id: \.id) { item in
+                                ExpenseItemView(vm: item)
+                            }
+                            .onDelete { index in
+                                guard let index = index.first else { return }
+                                // TODO
+                            }
                         }
-                        .onDelete { index in
-                            guard let index = index.first else { return }
-                            // TODO
-                        }
+                        // TODO: Add total amount view
+                    } else {
+                        EmptyView(image: "emptyExpenses",
+                                  text: Strings.Empty.title,
+                                  textColor: Color(Colors.green.name),
+                                  backgroundColor: .white)
                     }
-                    // TODO: Add total amount view
-                } else {
-                    EmptyView(image: "emptyExpenses",
-                              text: Strings.Empty.title,
-                              textColor: Color(Colors.green.name),
-                              backgroundColor: .white)
+                case .error:
+                    // TODO
+                    Text("")
                 }
             }
             .sheet(isPresented: $showAddExpenseView, onDismiss: {
@@ -54,24 +64,24 @@ struct ExpensesView: View {
             }
         }
     }
-    
+
     init(cvm: CardsViewModel, evm: ExpenseListViewModel) {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.largeTitleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
-        
+
         navBarAppearance.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
-        
+
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
         UINavigationBar.appearance().compactAppearance = navBarAppearance
         UINavigationBar.appearance().backgroundColor = UIColor(Color(Colors.blue.name))
         // Tint color for back button
         UINavigationBar.appearance().tintColor = .white
-        
+
         self.expensesViewModel = evm
         self.cardsViewModel = cvm
     }
@@ -79,6 +89,11 @@ struct ExpensesView: View {
 
 struct ExpensesView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpensesView(cvm: CardsViewModel(), evm: ExpenseListViewModel(cardsVM: CardsViewModel()))
+        ExpensesView(cvm: ExpensesViewMock.cvm, evm: ExpensesViewMock.evm)
     }
+}
+
+struct ExpensesViewMock {
+    static let cvm = CardsViewModel()
+    static let evm = ExpenseListViewModel(cardsVM: ExpensesViewMock.cvm)
 }

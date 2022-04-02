@@ -48,6 +48,7 @@
 		CBBE84B527F5413500FE9DCE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBE84B427F5413500FE9DCE /* Date.swift */; };
 		CBBE84B727F5470500FE9DCE /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBE84B627F5470500FE9DCE /* AddExpenseView.swift */; };
 		CBE1C4E027F8F7AA00B95404 /* ExpenseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE1C4DF27F8F7AA00B95404 /* ExpenseItemView.swift */; };
+		CBE1C4E227F908E000B95404 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE1C4E127F908E000B95404 /* LoaderView.swift */; };
 		CBE42D6527F54C6000F26CA6 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE42D6427F54C6000F26CA6 /* ExpensesView.swift */; };
 		CBF5E62127C46B6D0089880E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5E62027C46B6D0089880E /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -111,6 +112,7 @@
 		CBBE84B427F5413500FE9DCE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CBBE84B627F5470500FE9DCE /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
 		CBE1C4DF27F8F7AA00B95404 /* ExpenseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItemView.swift; sourceTree = "<group>"; };
+		CBE1C4E127F908E000B95404 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		CBE42D6427F54C6000F26CA6 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		CBF5E62027C46B6D0089880E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +164,7 @@
 				CB26683827EE6DB800A1DB46 /* PasswordTextField.swift */,
 				CB7EB1E327EFFC37007BC956 /* EmptyView.swift */,
 				CB7EB1E527F12912007BC956 /* PickerField.swift */,
+				CBE1C4E127F908E000B95404 /* LoaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				CB7EB1E627F12912007BC956 /* PickerField.swift in Sources */,
 				CB3E7C3127EE6931006E7EF4 /* LandingViewModel.swift in Sources */,
 				CBBE84B727F5470500FE9DCE /* AddExpenseView.swift in Sources */,
+				CBE1C4E227F908E000B95404 /* LoaderView.swift in Sources */,
 				CBA2787527D6C18600998FE0 /* AuthClient.swift in Sources */,
 				CBF5E62127C46B6D0089880E /* AuthViewModel.swift in Sources */,
 			);
