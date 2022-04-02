@@ -13,6 +13,7 @@ final class CardsViewModel: ObservableObject {
     // Output
     @Published var cardsVM: [CardViewModel] = []
     @Published var showError: Bool = false
+    @Published var loadingState: LoadingState = .none
 
     private var cards: [Card] = []
 
@@ -27,6 +28,7 @@ final class CardsViewModel: ObservableObject {
     }
 
     func getCards() {
+        loadingState = .loading
         client.getCards { result in
             switch result {
             case .success(let cards):
@@ -34,11 +36,13 @@ final class CardsViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.cards = cards
                     self.cardsVM = cardsVM
+                    self.loadingState = .success
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
                     self.showError = true
                     self.errorMessage = error.localizedDescription
+                    self.loadingState = .error
                 }
             }
         }

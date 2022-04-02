@@ -18,21 +18,31 @@ struct CardView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if !viewModel.cardsVM.isEmpty {
-                    List {
-                        ForEach(viewModel.cardsVM, id: \.self) { item in
-                            CardItemView(item: item)
+                switch viewModel.loadingState {
+                case .none:
+                    Text("")
+                case .loading:
+                    LoaderView()
+                case .success:
+                    if !viewModel.cardsVM.isEmpty {
+                        List {
+                            ForEach(viewModel.cardsVM, id: \.self) { item in
+                                CardItemView(item: item)
+                            }
+                            .onDelete { index in
+                                guard let index = index.first else { return }
+                                viewModel.deleteCard(at: index)
+                            }
                         }
-                        .onDelete { index in
-                            guard let index = index.first else { return }
-                            viewModel.deleteCard(at: index)
-                        }
+                    } else {
+                        EmptyStateView(image: "emptyCards",
+                                       text: Strings.Empty.title,
+                                       textColor: Color(Colors.green.name),
+                                       backgroundColor: .white)
                     }
-                } else {
-                    EmptyView(image: "emptyCards",
-                              text: Strings.Empty.title,
-                              textColor: Color(Colors.green.name),
-                              backgroundColor: .white)
+                case .error:
+                    // TODO
+                    Text("")
                 }
             }
             .sheet(isPresented: $showAddCardView, onDismiss: {

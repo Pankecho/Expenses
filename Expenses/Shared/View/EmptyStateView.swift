@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EmptyView: View {
+struct EmptyStateView: View {
     let image: String
 
     let text: String
@@ -37,9 +37,9 @@ struct EmptyView: View {
     }
 }
 
-struct EmptyView_Previews: PreviewProvider {
+struct EmptyStateView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyView(image: "emptyCards",
+        EmptyStateView(image: "emptyCards",
                   text: "Ooops, it looks like you don't have any cards added.",
                   textColor: .black,
                   backgroundColor: .white)

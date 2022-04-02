@@ -37,10 +37,10 @@ struct ExpensesView: View {
                         }
                         // TODO: Add total amount view
                     } else {
-                        EmptyView(image: "emptyExpenses",
-                                  text: Strings.Empty.title,
-                                  textColor: Color(Colors.green.name),
-                                  backgroundColor: .white)
+                        EmptyStateView(image: "emptyExpenses",
+                                       text: Strings.Empty.title,
+                                       textColor: Color(Colors.green.name),
+                                       backgroundColor: .white)
                     }
                 case .error:
                     // TODO

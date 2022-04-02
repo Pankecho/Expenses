@@ -30,7 +30,7 @@
 		CB7EB1DD27EFB77B007BC956 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7EB1DC27EFB77B007BC956 /* Double.swift */; };
 		CB7EB1DF27EFB7E2007BC956 /* CardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7EB1DE27EFB7E1007BC956 /* CardItemView.swift */; };
 		CB7EB1E227EFC2B5007BC956 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7EB1E127EFC2B4007BC956 /* SettingsView.swift */; };
-		CB7EB1E427EFFC37007BC956 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7EB1E327EFFC37007BC956 /* EmptyView.swift */; };
+		CB7EB1E427EFFC37007BC956 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7EB1E327EFFC37007BC956 /* EmptyStateView.swift */; };
 		CB7EB1E627F12912007BC956 /* PickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7EB1E527F12912007BC956 /* PickerField.swift */; };
 		CBA2787527D6C18600998FE0 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2787427D6C18600998FE0 /* AuthClient.swift */; };
 		CBA2787A27D6C3D600998FE0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2787927D6C3D600998FE0 /* HomeView.swift */; };
@@ -91,7 +91,7 @@
 		CB7EB1DC27EFB77B007BC956 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		CB7EB1DE27EFB7E1007BC956 /* CardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItemView.swift; sourceTree = "<group>"; };
 		CB7EB1E127EFC2B4007BC956 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		CB7EB1E327EFFC37007BC956 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		CB7EB1E327EFFC37007BC956 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		CB7EB1E527F12912007BC956 /* PickerField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerField.swift; sourceTree = "<group>"; };
 		CBA2787427D6C18600998FE0 /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		CBA2787927D6C3D600998FE0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 			children = (
 				CB26683627EE6D8100A1DB46 /* CommonTextField.swift */,
 				CB26683827EE6DB800A1DB46 /* PasswordTextField.swift */,
-				CB7EB1E327EFFC37007BC956 /* EmptyView.swift */,
+				CB7EB1E327EFFC37007BC956 /* EmptyStateView.swift */,
 				CB7EB1E527F12912007BC956 /* PickerField.swift */,
 				CBE1C4E127F908E000B95404 /* LoaderView.swift */,
 			);
@@ -532,7 +532,7 @@
 				CB7EB1E227EFC2B5007BC956 /* SettingsView.swift in Sources */,
 				CB7293B327BF0FF200C0F592 /* Card.swift in Sources */,
 				CB26683727EE6D8100A1DB46 /* CommonTextField.swift in Sources */,
-				CB7EB1E427EFFC37007BC956 /* EmptyView.swift in Sources */,
+				CB7EB1E427EFFC37007BC956 /* EmptyStateView.swift in Sources */,
 				CBE42D6527F54C6000F26CA6 /* ExpensesView.swift in Sources */,
 				CBBE84B527F5413500FE9DCE /* Date.swift in Sources */,
 				CB72939A27BEF83300C0F592 /* AuthView.swift in Sources */,
